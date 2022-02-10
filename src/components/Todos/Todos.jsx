@@ -47,7 +47,6 @@ export default function Todos() {
         dispatch(editTitleTodoTC(e, id))
     }
     const editCompletedTodo = (e, id) => {
-
         dispatch(editCompletedTodoTC(e === 'yes', id))
     }
     const deleteTodo = (id) => {

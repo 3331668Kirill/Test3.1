@@ -60,6 +60,7 @@ export const addNewTodosAC = (data) => {
 export const ErrorAC = (data) => {
     return ({type: 'ERROR', data})
 }
+
 export const getTodoTC = () => (dispatch) => {
     postsAPI.getTodos().then((res) => {
         dispatch(GetTodosAC(res.data))
@@ -77,8 +78,20 @@ export const editCompletedTodoTC = (completed, id) => (dispatch) => {
 }
 export const deleteTodoTC = (id) => (dispatch) => {
     dispatch(DeleteTodosAC(id))
+    postsAPI.deleteTodos(id)
+        .then(res=>console.log(res))
+        .catch((err) => {
+            console.log(err)
+            dispatch(ErrorAC(err))
+        })
 }
 export const addNewTodoTC = (userId, id, title) => (dispatch) => {
     let newTodo = {userId, id, title, completed:false}
     dispatch(addNewTodosAC(newTodo))
+    postsAPI.addTodos(JSON.stringify(newTodo))
+        .then(res => console.log(res))
+        .catch((err) => {
+            console.log(err)
+            dispatch(ErrorAC(err))
+        })
 }
