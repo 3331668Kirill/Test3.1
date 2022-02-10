@@ -1,0 +1,19 @@
+.superInput {
+    border: 3px solid black;
+    background: deepskyblue;
+}
+
+.errorInput {
+    border: 3px solid lime;
+    background: red;
+}
+
+.error {
+    color: red;
+}
+
+.newSpanClassName {
+    color: blueviolet;
+    font-family: "Berlin Sans FB";
+
+    }
