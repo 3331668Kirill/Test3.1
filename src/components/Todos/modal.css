@@ -22,7 +22,7 @@
 .modal_content {
     padding: 20px;
     border-radius: 12px;
-    background-color: darkseagreen;
+    background-color: #545464;
     transform: scale(0.5);
     transition: 0.4s all;
     width: 50vw;

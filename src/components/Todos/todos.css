@@ -1,0 +1,47 @@
+.table tr{
+   background-color: #323741;
+}
+.row_userID{
+    width: 100px;
+}
+.row_title{
+    width: 900px;
+}
+
+.row_title:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    z-index: 1;
+    background: rgba(255,255,230,0.9);
+    font-family: Arial, sans-serif;
+    color: black;
+    font-size: 15px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    opacity:1;
+    transition: opacity 1s;
+}
+.row_completed{
+    width: 180px;
+}
+.row_delete{
+    background-color:#282c34 ;
+}
+.select{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+.select select{
+    border-radius: 15%;
+    background-color: #282c34;
+    color: white;
+}
+.row_completed_text{
+    margin-left: 30px;
+}
+.div_button_new_todo{
+    margin-bottom: 15px;
+}

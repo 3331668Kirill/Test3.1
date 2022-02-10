@@ -2,8 +2,10 @@
 
 .footer {
   display: block;
-  color: rgba(5,5,5,5);
+  background-color: #545464;
+  color: white;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 20px;
   padding-bottom: 24px;
+  text-align: center;
 }

@@ -1,38 +1,16 @@
-import React, {useEffect, useState} from 'react'
-import {postsAPI} from "../../utils/api"
+import React from 'react'
+import logo from "./../../utils/logo.png"
 
 
 export default function Main() {
 
-    // const [data, setData] = useState([])
-    // const [error, setError] = useState('')
-    //
-    // const err = (err) => {
-    //     console.error(err)
-    //     setError("Server error, try again later")
-    // }
-    // useEffect(() => {
-    //     postsAPI.getTodos()
-    //         .then(data => setData(data.data))
-    //         .catch(err)
-    // }, [])
-    //
-    // const addNewPost = (e) => {
-    //     let post = JSON.stringify(e.newData)
-    //     postsAPI.addTodos(post)
-    //         .then(res => console.log(res))
-    //         .catch(err)
-    // }
-    //
-    // const deletePost = (e) => {
-    //     postsAPI.deleteTodos(e.data.id)
-    //         .then(res => console.log(res))
-    //         .catch(err)
-    // }
-
     return (
         <div>
-           444444
+            <div>
+                <img src={logo} alt="logo"/>
+            </div>
+            What is a todo list and how can it help in business and daily life?
+            Don’t think you’re unusual because there are thousands of people who struggle with the same every day, not just in the workplace but in their personal life too. Luckily, there is something very simple you can do to keep your life and work more organised.
         </div>
     )
 }

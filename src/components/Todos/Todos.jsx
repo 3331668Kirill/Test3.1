@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux"
 import SuperEditableSpan from "../../utils/SuperEditableSpan"
 import SuperSelect from "../../utils/SuperSelect"
 import AddNewTodoForm from "./AddNewTodoForm"
+import './todos.css'
 
 
 export default function Todos() {
@@ -63,12 +64,13 @@ export default function Todos() {
         <div>
             <AddNewTodoForm newId={newId}/>
             <table>
-                <tbody>
-                <tr>
-                    <th>userId</th>
-                    <th>id</th>
-                    <th>title</th>
-                    <th>completed</th>
+                <tbody className="table">
+                <tr className="table">
+                    <th className="row_userID" >userId</th>
+                    <th className="row_userID">id</th>
+                    <th className="row_title" data-title="Double click to change" >title</th>
+                    <th className="row_completed" >completed</th>
+
                 </tr>
 
                 {array && array.map((t, i) => {
@@ -76,25 +78,21 @@ export default function Todos() {
                         <tr key={i}>
                             <td>{t.userId}</td>
                             <td>{t.id}</td>
-                            <td>
+                            <td className="row_title" data-title="Double click to change">
                                 <SuperEditableSpan
                                     value={t.title}
                                     onChangeText={(e) => editTitleTodo(e, t.id)}
 
                                 />
-
-
-                            </td>
-                            <td>
+                           </td>
+                            <td className="select">
                                 <SuperSelect options={[" ", "yes", "no"]}
                                              onChangeOption={(e) => editCompletedTodo(e, t.id)}/>
-                                {t.completed ? "yes" : "no"}
+                                <span className="row_completed_text">{t.completed ? "yes" : "no"}</span>
                             </td>
-                            <td>
-
-                                <button onClick={() => {
-                                    deleteTodo(t.id)
-                                }}>delete
+                            <td className="row_delete">
+                                <button className="button" onClick={() => {deleteTodo(t.id)}}>
+                                    delete
                                 </button>
                             </td>
                         </tr>
@@ -106,7 +104,7 @@ export default function Todos() {
             <div>
                 {pages.map(t => <span key={t} onClick={() => setCurrentPage(t)}>
                         <button className={currentPage === t
-                            ? "button_active"
+                            ? "button button_active"
                             : "button"}
                         >{t}</button>
                     </span>)}

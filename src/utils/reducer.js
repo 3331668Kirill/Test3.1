@@ -1,6 +1,5 @@
 import {postsAPI} from "./api";
 
-
 const initialState = {
     todos: [],
     error: ''
@@ -32,7 +31,7 @@ export const reducer = (state = initialState, action) => {
         }
         case 'ADD_NEW_TODO':{
             let stateCopy = {...state, todos: [...state.todos.map(t=>t)]}
-            stateCopy.todos[action.data.id-1] = action.data
+            stateCopy.todos.push(action.data)
             return stateCopy
         }
         case 'ERROR': {
